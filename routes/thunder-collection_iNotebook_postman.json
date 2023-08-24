@@ -1,0 +1,246 @@
+{
+    "info": {
+        "_postman_id": "50676928-9dc9-48c2-a0fe-45df86b8d8d9",
+        "name": "iNotebook",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "Authentication",
+            "item": [
+                {
+                    "name": "Register User",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "localhost:3001/api/auth/createuser",
+                            "path": [
+                                "api",
+                                "auth",
+                                "createuser"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3001"
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"name\": \"Firsla\",\n  \"email\": \"kilocycl3@gmail.com\",\n  \"password\": \"12345678\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "Login User",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "localhost:3001/api/auth/login",
+                            "path": [
+                                "api",
+                                "auth",
+                                "login"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3001"
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"email\" : \"kilocycl2@gmail.com\",\n  \"password\": \"12345678\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "Get User Data",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "localhost:3001/api/auth/getuser",
+                            "path": [
+                                "api",
+                                "auth",
+                                "getuser"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3001"
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "auth-token",
+                                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRlMzUyYWFkNzViMGFiMTVhMDI0MDM5In0sImlhdCI6MTY5MjcwMjMwNn0.IC1CbTMHgmFc46MHyzwwX8Tgi7TJ4fbmBmwu0ufHjNY"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Notes",
+            "item": [
+                {
+                    "name": "Get all notes",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "localhost:3001/api/notes/fetchallnotes",
+                            "path": [
+                                "api",
+                                "notes",
+                                "fetchallnotes"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3001"
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "auth-token",
+                                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRlMzUyYWFkNzViMGFiMTVhMDI0MDM5In0sImlhdCI6MTY5MjcwMjMwNn0.IC1CbTMHgmFc46MHyzwwX8Tgi7TJ4fbmBmwu0ufHjNY"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "Add note",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "localhost:3001/api/notes/addnote/",
+                            "path": [
+                                "api",
+                                "notes",
+                                "addnote"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3001"
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "auth-token",
+                                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRlMzUyYWFkNzViMGFiMTVhMDI0MDM5In0sImlhdCI6MTY5MjcwMjMwNn0.IC1CbTMHgmFc46MHyzwwX8Tgi7TJ4fbmBmwu0ufHjNY"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"title\": \"My Title 3\",\n  \"description\": \"Description 3\",\n  \"tag\": \"personal\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "Update note",
+                    "request": {
+                        "method": "PUT",
+                        "url": {
+                            "raw": "localhost:3001/api/notes/updatenote/64e496d59d7689009f81cfc0",
+                            "path": [
+                                "api",
+                                "notes",
+                                "updatenote",
+                                "64e496d59d7689009f81cfc0"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3001"
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "auth-token",
+                                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRlMzUyYWFkNzViMGFiMTVhMDI0MDM5In0sImlhdCI6MTY5MjcwMjMwNn0.IC1CbTMHgmFc46MHyzwwX8Tgi7TJ4fbmBmwu0ufHjNY"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"title\": \"My Title 3\",\n  \"description\": \"Description 3 Updated\",\n  \"tag\": \"personal\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "Delete note",
+                    "request": {
+                        "method": "PUT",
+                        "url": {
+                            "raw": "localhost:3001/api/notes/deletenote/64e448f9e07f1bc2a7edc2a7",
+                            "path": [
+                                "api",
+                                "notes",
+                                "deletenote",
+                                "64e448f9e07f1bc2a7edc2a7"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3001"
+                        },
+                        "header": [
+                            {
+                                "key": "auth-token",
+                                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRlMzUyYWFkNzViMGFiMTVhMDI0MDM5In0sImlhdCI6MTY5MjY3NzkzOX0.Y6I13WnDCSkgT6Sw-A4s-QafYcmdx3iMOQ5PUySJ2-Q"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}
